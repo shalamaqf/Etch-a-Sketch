@@ -1,4 +1,7 @@
 const squareContainer = document.querySelector("#square-container");
+const CONTAINER_SIZE = 960;
+squareContainer.style.height = `${CONTAINER_SIZE}px`;
+squareContainer.style.width = `${CONTAINER_SIZE}px`;
 
 function createSquare(){
     const aSquare = document.createElement("div");
@@ -19,16 +22,12 @@ function createGrid(num){
     }
 
     // customize the container and square size
-    setContainerSize(num);
+    setSquareSize(num);
 }
 
-function setContainerSize(num){
-    // fix the container size
-    squareContainer.style.height = "960px";
-    squareContainer.style.width = "960px";
-    
+function setSquareSize(num){
     // set the square size
-    const squareSize = 960 / num;
+    const squareSize = CONTAINER_SIZE / num;
 
     // set every square size in the grid
     const squares = document.querySelectorAll(".square");
