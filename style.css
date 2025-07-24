@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.square {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
