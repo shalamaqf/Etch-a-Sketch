@@ -6,3 +6,6 @@ function createSquare(){
     return aSquare;
 }
 
+function createGrid(num){
+    
+}
