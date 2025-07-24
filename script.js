@@ -22,3 +22,18 @@ function createGrid(num){
     setContainerSize(num);
 }
 
+function setContainerSize(num){
+    // fix the container size
+    squareContainer.style.height = "960px";
+    squareContainer.style.width = "960px";
+    
+    // set the square size
+    const squareSize = 960 / num;
+
+    // set every square size in the grid
+    const squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        square.style.height = `${squareSize}px`;
+        square.style.width = `${squareSize}px`;
+    });
+}
