@@ -1,14 +1,21 @@
+// Create a variable to store the reference of container
 const squareContainer = document.querySelector("#square-container");
+
+// Set the container size 
 const CONTAINER_SIZE = 960;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
 squareContainer.style.width = `${CONTAINER_SIZE}px`;
 
+// Create a function to create a square
 function createSquare(){
     const aSquare = document.createElement("div");
     aSquare.classList.add("square");
     return aSquare;
 }
 
+/* Create a function to a create grid with num parameter,
+   so that user can create any grid size with desired
+*/
 function createGrid(num){
     // count the number of squares to put in the container
     const size = num * num;
@@ -35,4 +42,16 @@ function setSquareSize(num){
         square.style.height = `${squareSize}px`;
         square.style.width = `${squareSize}px`;
     });
+}
+
+/* Create a function to handle the event when mouse hover on the square,
+   so the square will turns black */
+function hoverSquare(){
+    const squares = document.querySelectorAll(".square");
+
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "black";
+        })
+    })
 }
