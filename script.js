@@ -71,7 +71,7 @@ function hoverSquare(){
 
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "black";
+            handleHover(square);
         })
     })
 }
