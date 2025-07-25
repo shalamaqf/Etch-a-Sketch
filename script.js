@@ -61,6 +61,9 @@ function setSquareSize(num){
     });
 }
 
+// Creata a variable to store the status mode, either draw or erase
+let statusMode = "draw";
+
 /* Create a function to handle the event when mouse hover on the square,
    so the square will turns black */
 function hoverSquare(){
