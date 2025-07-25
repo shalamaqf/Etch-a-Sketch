@@ -29,8 +29,7 @@ function createSquare(){
 }
 
 /* Create a function to a create grid with num parameter,
-   so that user can create any grid size with desired
-*/
+   so that user can create any grid size with desired */
 function createGrid(num){
     // count the number of squares to put in the container
     const size = num * num;
@@ -49,6 +48,8 @@ function createGrid(num){
     hoverSquare();
 }
 
+/* Create a function to adjust the square size 
+   to fit the container size */
 function setSquareSize(num){
     // set the square size
     const squareSize = CONTAINER_SIZE / num;
@@ -92,6 +93,8 @@ function promptSize(){
     return Number(sizeGrid);
 }
 
+/* Attach an event listener to size button to prompt the user how much size of the grid
+   then change the grid size */
 sizeBtn.addEventListener('click', () => {
     createGrid(promptSize());
 })
@@ -106,6 +109,8 @@ function handleHover(square){
     }
 }
 
+/* Attach an event listener to status button, to change the status mode
+   and change the text context of the button */
 statusBtn.addEventListener('click', () => {
     if (statusMode == "Draw"){
         statusMode = "Erase";
