@@ -11,7 +11,7 @@ sizeBtn.textContent = "Size";
 btnContainer.appendChild(sizeBtn);
 
 // Set the container size 
-const CONTAINER_SIZE = 960;
+const CONTAINER_SIZE = 500;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
 squareContainer.style.width = `${CONTAINER_SIZE}px`;
 
