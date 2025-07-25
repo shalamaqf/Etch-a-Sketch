@@ -64,3 +64,19 @@ function hoverSquare(){
         })
     })
 }
+
+/* Create a function to handle the event when mouse click on the size button,
+   then it will prompt the user to enter a grid size */
+function promptSize(){
+    const sizeGrid = prompt("Enter a size: ");
+
+    if (!sizeGrid || isNaN(sizeGrid)){
+        return alert("Please enter a valid number!");
+    }
+
+    if (Number(sizeGrid) > 64){
+        return alert("Max size is 64!");
+    }
+
+    return Number(sizeGrid);
+}
