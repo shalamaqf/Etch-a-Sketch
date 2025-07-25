@@ -39,6 +39,8 @@ function createGrid(num){
 
     // customize the container and square size
     setSquareSize(num);
+
+    hoverSquare();
 }
 
 function setSquareSize(num){
