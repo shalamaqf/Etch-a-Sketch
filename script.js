@@ -80,3 +80,7 @@ function promptSize(){
 
     return Number(sizeGrid);
 }
+
+sizeBtn.addEventListener('click', () => {
+    createGrid(promptSize());
+})
