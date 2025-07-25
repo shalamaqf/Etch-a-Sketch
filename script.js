@@ -55,3 +55,8 @@ function hoverSquare(){
         })
     })
 }
+
+const sizeBtn = document.createElement("button");
+sizeBtn.setAttribute("id", "size-button");
+sizeBtn.textContent = "Size";
+document.body.appendChild(sizeBtn);
