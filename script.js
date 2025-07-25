@@ -76,7 +76,7 @@ function promptSize(){
         return alert("Please enter a valid number!");
     }
 
-    if (Number(sizeGrid) > 64){
+    if (Number(sizeGrid) > 100){
         return alert("Max size is 64!");
     }
 
