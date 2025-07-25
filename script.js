@@ -4,6 +4,12 @@ const squareContainer = document.querySelector("#square-container");
 // Create a variable to store the reference of button container
 const btnContainer = document.querySelector("#button-container");
 
+// Create a button element for size, set its id, and append it to button container
+const sizeBtn = document.createElement("button");
+sizeBtn.setAttribute("id", "size-button");
+sizeBtn.textContent = "Size";
+btnContainer.appendChild(sizeBtn);
+
 // Set the container size 
 const CONTAINER_SIZE = 960;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
@@ -58,8 +64,3 @@ function hoverSquare(){
         })
     })
 }
-
-const sizeBtn = document.createElement("button");
-sizeBtn.setAttribute("id", "size-button");
-sizeBtn.textContent = "Size";
-btnContainer.appendChild(sizeBtn);
