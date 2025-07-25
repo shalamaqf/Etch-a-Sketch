@@ -10,6 +10,11 @@ sizeBtn.setAttribute("id", "size-button");
 sizeBtn.textContent = "Size";
 btnContainer.appendChild(sizeBtn);
 
+// Set the container size 
+const CONTAINER_SIZE = 960;
+squareContainer.style.height = `${CONTAINER_SIZE}px`;
+squareContainer.style.width = `${CONTAINER_SIZE}px`;
+
 // Create a function to create a square
 function createSquare(){
     const aSquare = document.createElement("div");
@@ -58,12 +63,4 @@ function hoverSquare(){
             square.style.backgroundColor = "black";
         })
     })
-}
-
-function resizeGridContainer(){
-    const size = Math.min(window.innerHeight, window.innerWidth) - 50;
-
-    // Set the container size 
-    squareContainer.style.height = `${size}px`;
-    squareContainer.style.width = `${size}px`;
 }
