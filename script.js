@@ -1,5 +1,8 @@
-// Create a variable to store the reference of container
+// Create a variable to store the reference of grid container
 const squareContainer = document.querySelector("#square-container");
+
+// Create a variable to store the reference of button container
+const btnContainer = document.querySelector("#button-container");
 
 // Set the container size 
 const CONTAINER_SIZE = 960;
@@ -59,4 +62,4 @@ function hoverSquare(){
 const sizeBtn = document.createElement("button");
 sizeBtn.setAttribute("id", "size-button");
 sizeBtn.textContent = "Size";
-document.body.appendChild(sizeBtn);
+btnContainer.appendChild(sizeBtn);
