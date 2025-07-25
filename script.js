@@ -95,3 +95,13 @@ function promptSize(){
 sizeBtn.addEventListener('click', () => {
     createGrid(promptSize());
 })
+
+// Create a function to handle the hover 
+function handleHover(square){
+    if (statusMode == "draw"){
+        square.style.backgroundColor = "black";
+    }
+    else{
+        square.style.backgroundColor = "#ffffff";
+    }
+}
