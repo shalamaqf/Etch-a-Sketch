@@ -13,7 +13,7 @@ btnContainer.appendChild(sizeBtn);
 // Create a button element for erase feature, set its id, and append it to the button container
 const statusBtn = document.createElement("button");
 statusBtn.setAttribute("id", "status-button");
-statusBtn.textContent = "Erase";
+statusBtn.textContent = "Current Mode: Draw";
 btnContainer.append(statusBtn);
 
 // Set the container size 
