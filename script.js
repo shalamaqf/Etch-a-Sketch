@@ -11,10 +11,10 @@ sizeBtn.textContent = "Size";
 btnContainer.appendChild(sizeBtn);
 
 // Create a button element for erase feature, set its id, and append it to the button container
-const eraseBtn = document.createElement("button");
-eraseBtn.setAttribute("id", "erase-button");
-eraseBtn.textContent = "Erase";
-btnContainer.append(eraseBtn);
+const statusBtn = document.createElement("button");
+statusBtn.setAttribute("id", "status-button");
+statusBtn.textContent = "Erase";
+btnContainer.append(statusBtn);
 
 // Set the container size 
 const CONTAINER_SIZE = 500;
