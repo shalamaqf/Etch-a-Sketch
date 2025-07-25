@@ -4,11 +4,17 @@ const squareContainer = document.querySelector("#square-container");
 // Create a variable to store the reference of button container
 const btnContainer = document.querySelector("#button-container");
 
-// Create a button element for size, set its id, and append it to button container
+// Create a button element for size, set its id, and append it to the button container
 const sizeBtn = document.createElement("button");
 sizeBtn.setAttribute("id", "size-button");
 sizeBtn.textContent = "Size";
 btnContainer.appendChild(sizeBtn);
+
+// Create a button element for erase feature, set its id, and append it to the button container
+const eraseBtn = document.createElement("button");
+eraseBtn.setAttribute("id", "erase-button");
+eraseBtn.textContent = "Erase";
+btnContainer.append(eraseBtn);
 
 // Set the container size 
 const CONTAINER_SIZE = 500;
