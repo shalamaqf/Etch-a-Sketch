@@ -62,7 +62,7 @@ function setSquareSize(num){
 }
 
 // Creata a variable to store the status mode, either draw or erase
-let statusMode = "draw";
+let statusMode = "Draw";
 
 /* Create a function to handle the event when mouse hover on the square,
    so the square will turns black */
@@ -98,10 +98,21 @@ sizeBtn.addEventListener('click', () => {
 
 // Create a function to handle the hover 
 function handleHover(square){
-    if (statusMode == "draw"){
+    if (statusMode == "Draw"){
         square.style.backgroundColor = "black";
     }
     else{
         square.style.backgroundColor = "#ffffff";
     }
 }
+
+statusBtn.addEventListener('click', () => {
+    if (statusMode == "Draw"){
+        statusMode = "Erase";
+        statusBtn.textContent = "Current Mode: Erase";
+    }
+    else {
+        statusMode = "Draw";
+        statusBtn.textContent = "Current Mode: Draw";
+    }
+})
