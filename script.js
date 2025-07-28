@@ -168,3 +168,16 @@ function activateRgbColor(){
    it will change the sketch iconColor,
    and upgrade the icon color */
 rgbBtn.addEventListener('click', activateRgbColor);
+
+// Create a function to reset the squares color to white
+function resetGrid(){
+    // set all square's color to white
+    const squares = document.querySelectorAll(".square");
+
+    squares.forEach(square => {
+        square.style.backgroundColor = "#ffffff";
+    })
+
+    // set the sketch color back to default (black)
+    sketchColor = "rgb(0, 0, 0)";
+}
