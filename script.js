@@ -87,7 +87,7 @@ function promptSize(){
     }
 
     if (Number(sizeGrid) > 100){
-        return alert("Max size is 64!");
+        return alert("Max size is 100!");
     }
 
     return Number(sizeGrid);
