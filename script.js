@@ -27,6 +27,12 @@ const iconColor = document.createElement("span");
 iconColor.setAttribute("id", "icon-color");
 rgbBtn.appendChild(iconColor);
 
+// Create a button element for reset feature, set its id, and append it to the button container
+const resetBtn = document.createElement("button");
+resetBtn.setAttribute("id", "reset-button");
+resetBtn.textContent = "Reset";
+btnContainer.appendChild(resetBtn);
+
 // Set the container size 
 const CONTAINER_SIZE = 500;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
@@ -152,4 +158,13 @@ function activateRgbColor(){
 
     // set the icon color
     iconColor.style.backgroundColor = sketchColor;
+
+    // update the ui of status button
+    statusMode = "Draw";
+    statusBtn.textContent = "Current Mode: Draw";
 }
+
+/* Attach an event listener to rgb button,
+   it will change the sketch iconColor,
+   and upgrade the icon color */
+rgbBtn.addEventListener('click', activateRgbColor);
