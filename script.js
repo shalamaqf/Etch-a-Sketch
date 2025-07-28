@@ -118,9 +118,7 @@ sizeBtn.addEventListener('click', () => {
 })
 
 // Create a function to handle the hover 
-function handleHoverColor(square){
-    const alpha = parseFloat(square.dataset.alpha)
-
+function handleHoverColor(square, alpha){
     if (statusMode == "Draw"){
         square.style.backgroundColor = rgbToRgba(sketchColor, alpha);
     }
