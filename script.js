@@ -190,3 +190,20 @@ function resetGrid(){
    it will change all square's color back to white,
    and upgrade the sketch and icon color back to the default color (black) */
 resetBtn.addEventListener('click', resetGrid);
+
+// Create a function to check and update the alpha color of a square
+function increaseOpacity(square){
+    let currentAlpha = parseFloat(square.dataset.alpha);
+    
+    if (currentAlpha < 1){
+        currentAlpha += 0.1;
+    }
+
+    if (currentAlpha > 1){
+        currentAlpha = 1;
+    }
+
+    square.dataset.alpha = currentAlpha;
+    
+    return currentAlpha;
+}
