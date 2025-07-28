@@ -143,13 +143,13 @@ function generateRandomRgbColor() {
 }
 
 // create a variable to store the rgb values
-let randomRgbColor = "rgb(0, 0, 0)";
+let sketchColor = "rgb(0, 0, 0)";
 
 // create a function to activate the rgb color
 function activateRgbColor(){
     // generate the random rgb color
-    randomRgbColor = generateRandomRgbColor();
+    sketchColor = generateRandomRgbColor();
 
     // set the icon color
-    iconColor.style.backgroundColor = randomRgbColor;
+    iconColor.style.backgroundColor = sketchColor;
 }
