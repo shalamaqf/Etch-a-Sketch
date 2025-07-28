@@ -41,6 +41,7 @@ squareContainer.style.width = `${CONTAINER_SIZE}px`;
 // Create a function to create a square
 function createSquare(){
     const aSquare = document.createElement("div");
+    aSquare.dataset.alpha = 0;
     aSquare.classList.add("square");
     return aSquare;
 }
