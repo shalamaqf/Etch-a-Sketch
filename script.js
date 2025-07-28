@@ -19,7 +19,7 @@ btnContainer.append(statusBtn);
 // Create a button element for rgb feature, set its id, and append it to the button container
 const rgbBtn = document.createElement("button");
 rgbBtn.setAttribute("id", "rgb-button");
-rgbBtn.textContent = "RGB: ";
+rgbBtn.textContent = "RGB:";
 btnContainer.appendChild(rgbBtn);
 
 // Create a span element for an icon color

@@ -37,6 +37,7 @@ body {
     display: inline-flex;
     align-items: center;
     margin-right: 1px;
+    margin-left: 2px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
