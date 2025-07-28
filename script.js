@@ -113,7 +113,7 @@ sizeBtn.addEventListener('click', () => {
 // Create a function to handle the hover 
 function handleHover(square){
     if (statusMode == "Draw"){
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = sketchColor;
     }
     else{
         square.style.backgroundColor = "#ffffff";
