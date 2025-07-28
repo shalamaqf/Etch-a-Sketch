@@ -164,8 +164,8 @@ function activateRgbColor(){
     statusBtn.textContent = "Current Mode: Draw";
 }
 
-/* Attach an event listener to rgb button,
-   it will change the sketch iconColor,
+/* Attach an event listener to rgb button, when it click
+   it will change the sketch color,
    and upgrade the icon color */
 rgbBtn.addEventListener('click', activateRgbColor);
 
@@ -180,4 +180,7 @@ function resetGrid(){
 
     // set the sketch color back to default (black)
     sketchColor = "rgb(0, 0, 0)";
+
+    // set the iconColor back to default (black)
+    iconColor.style.backgroundColor = sketchColor;
 }
