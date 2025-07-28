@@ -204,6 +204,14 @@ function increaseOpacity(square){
     }
 
     square.dataset.alpha = currentAlpha;
-    
+
     return currentAlpha;
+}
+
+// convert the rgb color to rgba
+function rgbToRgba(rgb, alpha){
+    // user regex to extract the number of rgb
+    const [r, g, b] = rgb.match(/\d+/g);
+
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
