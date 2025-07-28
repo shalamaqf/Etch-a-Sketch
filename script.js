@@ -90,7 +90,8 @@ function hoverSquare(){
 
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            handleHoverColor(square);
+            const alpha = increaseOpacity(square);
+            handleHoverColor(square, alpha);
         })
     })
 }
