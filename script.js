@@ -142,4 +142,5 @@ function generateRandomRgbColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-console.log(generateRandomRgbColor());
+// create a variable to store the rgb values
+let randomRgbColor = generateRandomRgbColor();
