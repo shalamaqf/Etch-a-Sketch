@@ -83,7 +83,7 @@ function hoverSquare(){
 
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            handleHover(square);
+            handleHoverColor(square);
         })
     })
 }
@@ -111,7 +111,7 @@ sizeBtn.addEventListener('click', () => {
 })
 
 // Create a function to handle the hover 
-function handleHover(square){
+function handleHoverColor(square){
     if (statusMode == "Draw"){
         square.style.backgroundColor = sketchColor;
     }
