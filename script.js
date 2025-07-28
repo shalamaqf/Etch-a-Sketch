@@ -143,7 +143,7 @@ function generateRandomRgbColor() {
 }
 
 // create a variable to store the rgb values
-let randomRgbColor = generateRandomRgbColor();
+let randomRgbColor = "rgb(0, 0, 0)";
 
 // create a function to activate the rgb color
 function activateRgbColor(){
