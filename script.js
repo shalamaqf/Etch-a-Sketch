@@ -16,6 +16,12 @@ statusBtn.setAttribute("id", "status-button");
 statusBtn.textContent = "Current Mode: Draw";
 btnContainer.append(statusBtn);
 
+// Create a button element for rgb feature, set its id, and append it to the button container
+const rgbBtn = document.createElement("button");
+rgbBtn.setAttribute("id", "rgb-button");
+rgbBtn.textContent = "RGB";
+btnContainer.appendChild(rgbBtn);
+
 // Set the container size 
 const CONTAINER_SIZE = 500;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
