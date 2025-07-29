@@ -17,10 +17,10 @@ statusBtn.textContent = "Current Mode: Draw";
 btnContainer.append(statusBtn);
 
 // Create a button element for rgb feature, set its id, and append it to the button container
-const rgbBtn = document.createElement("button");
-rgbBtn.setAttribute("id", "rgb-button");
-rgbBtn.textContent = "RGB:";
-btnContainer.appendChild(rgbBtn);
+const rgbaBtn = document.createElement("button");
+rgbaBtn.setAttribute("id", "rgba-button");
+rgbaBtn.textContent = "RGBA:";
+btnContainer.appendChild(rgbaBtn);
 
 // Create a span element for an icon color
 const iconColor = document.createElement("span");
