@@ -226,3 +226,9 @@ function resetAlpha(){
         }
     });
 }
+
+// Create a div element to store the list
+const info = document.createElement("div");
+info.setAttribute("id", "info-program");
+info.textContent = "Usage Instructions";
+document.body.appendChild(info);
