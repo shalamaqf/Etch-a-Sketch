@@ -185,7 +185,7 @@ function resetGrid(){
     sketchColor = "rgba(0, 0, 0, 0)";
 
     // set the iconColor back to default (black)
-    iconColor.style.backgroundColor = sketchColor;
+    iconColor.style.backgroundColor = "rgb(0, 0, 0)";
 }
 
 /* Attach an event listener to reset button, when it clicked
