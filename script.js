@@ -178,6 +178,9 @@ function resetGrid(){
 
     squares.forEach(square => {
         square.style.backgroundColor = "#ffffff";
+
+        // set the alpha back to 0
+        square.dataset.alpha = "0";
     })
 
     // set the sketch color back to default (black)
