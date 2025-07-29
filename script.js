@@ -252,3 +252,9 @@ orderedList.appendChild(listInfo_4);
 
 info.appendChild(orderedList);
 document.body.appendChild(info);
+
+// Create a title of the program
+const titleProject = document.createElement("div");
+titleProject.setAttribute("id", "title");
+titleProject.textContent = "Etch A Sketch!"
+document.body.insertBefore(titleProject, btnContainer);

@@ -54,3 +54,12 @@ ol li {
     text-align: start;
     margin-top: 2px;
 }
+
+#title {
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 75px;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+}
