@@ -154,9 +154,9 @@ function generateRandomRgbaColor() {
 let sketchColor = "rgba(0, 0, 0, 0)";
 
 // create a function to activate the rgb color
-function activateRgbColor(){
+function activateRgbaColor(){
     // generate the random rgb color
-    sketchColor = generateRandomRgbColor();
+    sketchColor = generateRandomRgbaColor();
 
     // set the icon color
     iconColor.style.backgroundColor = sketchColor;
