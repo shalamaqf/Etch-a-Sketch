@@ -134,6 +134,7 @@ statusBtn.addEventListener('click', () => {
     if (statusMode == "Draw"){
         statusMode = "Erase";
         statusBtn.textContent = "Current Mode: Erase";
+        resetAlpha();
     }
     else {
         statusMode = "Draw";
@@ -182,6 +183,9 @@ function resetGrid(){
     squares.forEach(square => {
         square.style.backgroundColor = "rgba(255, 255, 255, 1)";
     })
+
+    // set square's alpha to 0
+    resetAlpha();
 
     // set the sketch color back to default (black)
     sketchColor = "rgba(0, 0, 0, 0)";
