@@ -142,12 +142,12 @@ statusBtn.addEventListener('click', () => {
 })
 
 // create a function to generate a random rgb color
-function generateRandomRgbColor() {
+function generateRandomRgbaColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
 
-    return `rgb(${r}, ${g}, ${b})`;
+    return `rgba(${r}, ${g}, ${b}, 0)`;
 }
 
 // create a variable to store the rgb values
