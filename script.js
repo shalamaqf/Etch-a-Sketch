@@ -169,7 +169,7 @@ function activateRgbColor(){
 /* Attach an event listener to rgb button, when it clicked
    it will change the sketch color,
    and upgrade the icon color */
-rgbBtn.addEventListener('click', activateRgbColor);
+rgbaBtn.addEventListener('click', activateRgbColor);
 
 // Create a function to reset the squares color to white
 function resetGrid(){
