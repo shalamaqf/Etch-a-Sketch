@@ -227,8 +227,28 @@ function resetAlpha(){
     });
 }
 
-// Create a div element to store the list
+// Create usage instructions to use this program
 const info = document.createElement("div");
 info.setAttribute("id", "info-program");
-info.textContent = "Usage Instructions";
+info.textContent = "Usage Instructions: ";
+
+const orderedList = document.createElement("ol");
+
+const listInfo_1 = document.createElement("li");
+listInfo_1.textContent = "Size: Change the grid size";
+orderedList.appendChild(listInfo_1);
+
+const listInfo_2 = document.createElement("li");
+listInfo_2.textContent = "Current Mode: Draw (Draw mode on) / Erase (Erase mode on)";
+orderedList.appendChild(listInfo_2);
+
+const listInfo_3 = document.createElement("li");
+listInfo_3.textContent = "RGBA: Change the sketch color";
+orderedList.appendChild(listInfo_3);
+
+const listInfo_4 = document.createElement("li");
+listInfo_4.textContent = "Reset: Reset the grid";
+orderedList.appendChild(listInfo_4);
+
+info.appendChild(orderedList);
 document.body.appendChild(info);
