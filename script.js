@@ -151,7 +151,7 @@ function generateRandomRgbaColor() {
 }
 
 // create a variable to store the rgb values
-let sketchColor = "rgb(0, 0, 0)";
+let sketchColor = "rgba(0, 0, 0, 0)";
 
 // create a function to activate the rgb color
 function activateRgbColor(){
