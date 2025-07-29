@@ -177,14 +177,11 @@ function resetGrid(){
     const squares = document.querySelectorAll(".square");
 
     squares.forEach(square => {
-        square.style.backgroundColor = "#ffffff";
-
-        // set the alpha back to 0
-        square.dataset.alpha = "0";
+        square.style.backgroundColor = "rgba(255, 255, 255, 1)";
     })
 
     // set the sketch color back to default (black)
-    sketchColor = "rgb(0, 0, 0)";
+    sketchColor = "rgba(0, 0, 0, 0)";
 
     // set the iconColor back to default (black)
     iconColor.style.backgroundColor = sketchColor;
