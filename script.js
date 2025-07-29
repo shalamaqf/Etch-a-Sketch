@@ -25,7 +25,7 @@ btnContainer.appendChild(rgbaBtn);
 // Create a span element for an icon color
 const iconColor = document.createElement("span");
 iconColor.setAttribute("id", "icon-color");
-rgbBtn.appendChild(iconColor);
+rgbaBtn.appendChild(iconColor);
 
 // Create a button element for reset feature, set its id, and append it to the button container
 const resetBtn = document.createElement("button");
