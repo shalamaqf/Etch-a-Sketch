@@ -158,6 +158,8 @@ function activateRgbaColor(){
     // generate the random rgb color
     sketchColor = generateRandomRgbaColor();
 
+    resetAlpha();
+
     // set the icon color
     const rgbValues = sketchColor.match(/\d+/g).slice(0, 3).join(', ');
     iconColor.style.backgroundColor = `rgb(${rgbValues})`; 
@@ -210,4 +212,13 @@ function increaseOpacity(square){
     return currentAlpha;
 }
 
-// memperbaiki mengapa saat hovering tidak berfungsi
+// Create a function to check the alpha square
+function resetAlpha(){
+    const squares = document.querySelectorAll(".square");
+
+    squares.forEach(square => {
+        if (parseFloat(square.dataset.alpha) > 0) {
+            square.dataset.alpha = 0;
+        }
+    });
+}
