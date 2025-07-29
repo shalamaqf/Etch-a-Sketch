@@ -258,3 +258,6 @@ const titleProject = document.createElement("div");
 titleProject.setAttribute("id", "title");
 titleProject.textContent = "Etch A Sketch!"
 document.body.insertBefore(titleProject, btnContainer);
+
+// default grid
+createGrid(16);
