@@ -121,7 +121,7 @@ sizeBtn.addEventListener('click', () => {
 // Create a function to handle the hover 
 function handleHoverColor(square, alpha){
     if (statusMode == "Draw"){
-        square.style.backgroundColor = `rgba(${sketchColor.match(/\d+/g).join(', ')}, ${alpha})`;
+        square.style.backgroundColor = `rgba(${sketchColor.match(/\d+/g).slice(0, 3).join(', ')}, ${alpha})`;
     }
     else{
         square.style.backgroundColor = "rgba(255, 255, 255, 1)";
@@ -159,8 +159,9 @@ function activateRgbaColor(){
     sketchColor = generateRandomRgbaColor();
 
     // set the icon color
-    iconColor.style.backgroundColor = sketchColor;
-
+    const rgbValues = sketchColor.match(/\d+/g).slice(0, 3).join(', ');
+    iconColor.style.backgroundColor = `rgb(${rgbValues})`; 
+    
     // update the ui of status button
     statusMode = "Draw";
     statusBtn.textContent = "Current Mode: Draw";
@@ -208,3 +209,5 @@ function increaseOpacity(square){
 
     return currentAlpha;
 }
+
+// memperbaiki mengapa saat hovering tidak berfungsi
