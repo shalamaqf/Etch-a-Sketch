@@ -230,9 +230,9 @@ function resetAlpha(){
 // Create usage instructions to use this program
 const info = document.createElement("div");
 info.setAttribute("id", "info-program");
-info.textContent = "Usage Instructions: ";
 
 const orderedList = document.createElement("ol");
+orderedList.textContent = "Usage Instructions: ";
 
 const listInfo_1 = document.createElement("li");
 listInfo_1.textContent = "Size: Change the grid size";
