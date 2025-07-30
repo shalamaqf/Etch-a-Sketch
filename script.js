@@ -1,44 +1,42 @@
-// Create a variable to store the reference of grid container
+// Reference to grid and button container
 const squareContainer = document.querySelector("#square-container");
-
-// Create a variable to store the reference of button container
 const btnContainer = document.querySelector("#button-container");
 
-// Create a button element for size, set its id, and append it to the button container
+
+// Create control buttons and append it to the button container
 const sizeBtn = document.createElement("button");
 sizeBtn.setAttribute("id", "size-button");
 sizeBtn.textContent = "Size";
 btnContainer.appendChild(sizeBtn);
 
-// Create a button element for erase feature, set its id, and append it to the button container
 const statusBtn = document.createElement("button");
 statusBtn.setAttribute("id", "status-button");
 statusBtn.textContent = "Current Mode: Draw";
 btnContainer.append(statusBtn);
 
-// Create a button element for rgb feature, set its id, and append it to the button container
 const rgbaBtn = document.createElement("button");
 rgbaBtn.setAttribute("id", "rgba-button");
 rgbaBtn.textContent = "RGBA:";
 btnContainer.appendChild(rgbaBtn);
 
-// Create a span element for an icon color
-const iconColor = document.createElement("span");
-iconColor.setAttribute("id", "icon-color");
-rgbaBtn.appendChild(iconColor);
-
-// Create a button element for reset feature, set its id, and append it to the button container
 const resetBtn = document.createElement("button");
 resetBtn.setAttribute("id", "reset-button");
 resetBtn.textContent = "Reset";
 btnContainer.appendChild(resetBtn);
 
-// Set the container size 
+
+// Color preview indicator inside the RGBA button
+const iconColor = document.createElement("span");
+iconColor.setAttribute("id", "icon-color");
+rgbaBtn.appendChild(iconColor);
+
+
 const CONTAINER_SIZE = 500;
 squareContainer.style.height = `${CONTAINER_SIZE}px`;
 squareContainer.style.width = `${CONTAINER_SIZE}px`;
 
-// Create a function to create a square
+
+// Create a single square with initial opacity data attribute
 function createSquare(){
     const aSquare = document.createElement("div");
     aSquare.dataset.alpha = 0;
@@ -46,33 +44,29 @@ function createSquare(){
     return aSquare;
 }
 
-/* Create a function to a create grid with num parameter,
-   so that user can create any grid size with desired */
+
+/* 
+ * Generates a grid of squares based on the provided size (num * num)
+ * Clear existing grid and adjust square sizes to fit the container
+*/
 function createGrid(num){
-    // count the number of squares to put in the container
     const size = num * num;
     
-    // delete old grid
-    squareContainer.innerHTML = '';
+    squareContainer.innerHTML = '';         // Clear existing grid
 
-    // generate a grid
     for (let i = 0; i < size; i++){
         squareContainer.appendChild(createSquare());
     }
 
-    // customize the container and square size
     setSquareSize(num);
-
-    hoverSquare();
+    hoverSquare();          // Attach hover event to new squares
 }
 
-/* Create a function to adjust the square size 
-   to fit the container size */
+
+// Adjust each square's size to fit the container
 function setSquareSize(num){
-    // set the square size
     const squareSize = CONTAINER_SIZE / num;
 
-    // set every square size in the grid
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => {
         square.style.height = `${squareSize}px`;
@@ -80,11 +74,15 @@ function setSquareSize(num){
     });
 }
 
-// Creata a variable to store the status mode, either draw or erase
+
+// Tracks current mode: "Draw" or "Erase"
 let statusMode = "Draw";
 
-/* Create a function to handle the event when mouse hover on the square,
-   so the square will turns black */
+
+/*
+ * Adds hover event listeners to each square, to modify the color based on the current color
+ * On hover, the square's opacity increase gradually
+*/
 function hoverSquare(){
     const squares = document.querySelectorAll(".square");
 
@@ -96,8 +94,10 @@ function hoverSquare(){
     })
 }
 
-/* Create a function to handle the event when mouse click on the size button,
-   then it will prompt the user to enter a grid size */
+
+/*
+ * Prompt the user for grid size, validates the input, and return the size as a number
+*/
 function promptSize(){
     const sizeGrid = prompt("Enter a size: ");
 
@@ -112,13 +112,14 @@ function promptSize(){
     return Number(sizeGrid);
 }
 
-/* Attach an event listener to size button to prompt the user how much size of the grid
-   then change the grid size */
+
+// Event listeners to change the grid size on button click
 sizeBtn.addEventListener('click', () => {
     createGrid(promptSize());
 })
 
-// Create a function to handle the hover 
+
+// Adjust the color based on the status mode and control the opacity based on alpha
 function handleHoverColor(square, alpha){
     if (statusMode == "Draw"){
         square.style.backgroundColor = `rgba(${sketchColor.match(/\d+/g).slice(0, 3).join(', ')}, ${alpha})`;
@@ -128,8 +129,11 @@ function handleHoverColor(square, alpha){
     }
 }
 
-/* Attach an event listener to status button, to change the status mode
-   and change the text context of the button */
+
+/* 
+ * Event listeners to change the text context of status button
+ * Reset the square's alpha to default on button click
+*/
 statusBtn.addEventListener('click', () => {
     if (statusMode == "Draw"){
         statusMode = "Erase";
@@ -142,7 +146,8 @@ statusBtn.addEventListener('click', () => {
     }
 })
 
-// create a function to generate a random rgb color
+
+// Generates a random RGBA color and returns it
 function generateRandomRgbaColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -151,55 +156,61 @@ function generateRandomRgbaColor() {
     return `rgba(${r}, ${g}, ${b}, 0)`;
 }
 
-// create a variable to store the rgb values
+
+// Set the default color on hover
 let sketchColor = "rgba(0, 0, 0, 0)";
 
-// create a function to activate the rgb color
+
+/*
+ * Activate the RGBA color on hover
+ * Reset the square's opacity back to default
+ * Change the icon color based on current active RGBA color
+ * Update the status mode to draw
+*/
 function activateRgbaColor(){
-    // generate the random rgb color
     sketchColor = generateRandomRgbaColor();
 
     resetAlpha();
 
-    // set the icon color
     const rgbValues = sketchColor.match(/\d+/g).slice(0, 3).join(', ');
     iconColor.style.backgroundColor = `rgb(${rgbValues})`; 
     
-    // update the ui of status button
     statusMode = "Draw";
     statusBtn.textContent = "Current Mode: Draw";
 }
 
-/* Attach an event listener to rgb button, when it clicked
-   it will change the sketch color,
-   and upgrade the icon color */
+
+// Event listeners to activate the RGBA color on hover when button clicked
 rgbaBtn.addEventListener('click', activateRgbaColor);
 
-// Create a function to reset the squares color to white
+
+/*
+ * Reset the each square's color back to white
+ * Reset the opacity, sketch color and icon color back to default
+*/
 function resetGrid(){
-    // set all square's color to white
     const squares = document.querySelectorAll(".square");
 
     squares.forEach(square => {
         square.style.backgroundColor = "rgba(255, 255, 255, 1)";
     })
 
-    // set square's alpha to 0
     resetAlpha();
 
-    // set the sketch color back to default (black)
     sketchColor = "rgba(0, 0, 0, 0)";
 
-    // set the iconColor back to default (black)
     iconColor.style.backgroundColor = "rgb(0, 0, 0)";
 }
 
-/* Attach an event listener to reset button, when it clicked
-   it will change all square's color back to white,
-   and upgrade the sketch and icon color back to the default color (black) */
+
+// Event listeners to reset the grid and features back to default on button click
 resetBtn.addEventListener('click', resetGrid);
 
-// Create a function to check and update the alpha color of a square
+
+/* 
+ * Increase square's opacity gradually when being hovered
+ * Tracks the current opacity
+*/
 function increaseOpacity(square){
     let currentAlpha = parseFloat(square.dataset.alpha);
     
@@ -216,7 +227,8 @@ function increaseOpacity(square){
     return currentAlpha;
 }
 
-// Create a function to check the alpha square
+
+// Check the square's opacity and set it to 0, if it's more than default value
 function resetAlpha(){
     const squares = document.querySelectorAll(".square");
 
@@ -227,7 +239,8 @@ function resetAlpha(){
     });
 }
 
-// Create usage instructions to use this program
+
+// Create usage instructions to use this program and append it to the body
 const info = document.createElement("div");
 info.setAttribute("id", "info-program");
 
@@ -253,11 +266,13 @@ orderedList.appendChild(listInfo_4);
 info.appendChild(orderedList);
 document.body.appendChild(info);
 
-// Create a title of the program
+
+// Create a title of the program, set its id, and append it to the body
 const titleProject = document.createElement("div");
 titleProject.setAttribute("id", "title");
 titleProject.textContent = "Etch A Sketch!"
 document.body.insertBefore(titleProject, btnContainer);
 
-// default grid
+
+// Set the default grid size
 createGrid(16);
